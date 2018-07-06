@@ -15,3 +15,14 @@ server:
 #    console: "%d - %msg%n"
 #  file: /var/log/tomcat/sell.log
 #  level: debug
+# 此处WeChat信息全部乱写的 实际测试的时候需要完整的商户信息
+wechat:
+  mpAppId:1111
+  mpAppSecret:22222fdsf3324fh67j58j785j
+  mchId:12321
+  mchKey:312312dsfsfewr3r3r32fr32fr
+  mchPath:/var/weixin_cert/h5.p12
+  notifyUrl:http://xyf.s1.natapp.cc/sell/pay/notify
+
+
+

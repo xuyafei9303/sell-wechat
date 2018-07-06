@@ -78,7 +78,7 @@ public class BuyerOrderController {
 
         OrderDto orderDto = buyerService.findOrderOne(openid, orderId);
 
-        // TODO 不安全的做法
+        // 不安全的做法
 //        OrderDto orderDto = orderService.findOne(orderId);
 //        if (!orderDto.getBuyerOpenid().equalsIgnoreCase(openid)) {
 //
@@ -91,7 +91,7 @@ public class BuyerOrderController {
     @PostMapping("/cancel")
     public ResultVo cancel(@RequestParam("openid") String openid,
                            @RequestParam("orderId") String orderId) {
-        // TODO 不安全做法
+        // 不安全做法
 //        OrderDto orderDto = orderService.findOne(orderId);
 //        orderService.cancel(orderDto);
 //        return ResultVOUtil.success();
