@@ -6,6 +6,8 @@ spring:
     url: jdbc:mysql://127.0.0.1/cell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
+  jackson:
+    default-property-inclusion: non_null # 在返回字段的时候有些字段不需要返回或者为空 ，可以用这个参数，然后就不会显示了，比如显示为null的字段，用这个就不会再返回字段中显示
 server:
   context-path: /sell
 #logging:

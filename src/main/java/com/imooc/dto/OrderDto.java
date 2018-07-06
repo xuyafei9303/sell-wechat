@@ -1,9 +1,13 @@
 package com.imooc.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.imooc.dataobject.OrderDetail;
+import com.imooc.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +15,7 @@ import java.util.List;
  * 数据传输对象
  */
 @Data
+// @JsonInclude(JsonInclude.Include.NON_NULL) // 返回的字段中 不需要返回的为空的字段可以用这个注解忽略掉
 public class OrderDto {
 
     /**
@@ -58,11 +63,13 @@ public class OrderDto {
     /**
      * 创建时间
      */
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
 
     /**
      * 更细时间
      */
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
 
     List<OrderDetail> orderDetailList;
