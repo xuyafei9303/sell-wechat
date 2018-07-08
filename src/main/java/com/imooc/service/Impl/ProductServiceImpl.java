@@ -72,7 +72,6 @@ public class ProductServiceImpl implements ProductService {
             if (result < 0) {
                 throw new SellException(ResultEnum.PRODUCT_STOCK_ERROR);
             }
-
             productInfo.setProductStock(result);
 
             repository.save(productInfo);
