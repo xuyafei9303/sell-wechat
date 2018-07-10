@@ -43,9 +43,11 @@
                         <td>${productInfo.updateTime}</td>
                         <td><a href="/sell/seller/product/index?productId=${productInfo.productId}">修改</a></td>
                         <td>
-                            <#--<#if orderDto.getOrderStatusEnum().message == "新订单">-->
-                                <a href="/sell/seller/product/index?productId=${productInfo.productId}">下架</a>
-                            <#--</#if>-->
+                            <#if productInfo.getProductStatusEnum().message == "在架">
+                                    <a href="/sell/seller/product/off_sale?productId=${productInfo.productId}">下架</a>
+                                <#else >
+                                    <a href="/sell/seller/product/on_sale?productId=${productInfo.productId}">上架</a>
+                            </#if>
 
                         </td>
                     </tr>

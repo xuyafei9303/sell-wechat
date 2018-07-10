@@ -6,6 +6,9 @@ spring:
     url: jdbc:mysql://127.0.0.1/cell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
   jackson:
     default-property-inclusion: non_null # 在返回字段的时候有些字段不需要返回或者为空 ，可以用这个参数，然后就不会显示了，比如显示为null的字段，用这个就不会再返回字段中显示
 server:
@@ -19,10 +22,18 @@ server:
 wechat:
   mpAppId:1111
   mpAppSecret:22222fdsf3324fh67j58j785j
+  openAppId:23243245
+  openAppSecret:534634636dv
   mchId:12321
   mchKey:312312dsfsfewr3r3r32fr32fr
   mchPath:/var/weixin_cert/h5.p12
   notifyUrl:http://xyf.s1.natapp.cc/sell/pay/notify
+
+
+ProjectUrl:
+  wechatMpAuthrize:http://xyf.s1.natapp.cc/sell
+  wechatOpenAuthrize:http://xyf.s1.natapp.cc/sell
+  sell:http://xyf.s1.natapp.cc/sell/
 
 
 

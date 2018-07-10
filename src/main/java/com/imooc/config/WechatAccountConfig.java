@@ -9,9 +9,25 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "wechat")
 public class WechatAccountConfig {
 
+    /**
+     * 公众平台id
+     */
     private String mpAppid;
 
+    /**
+     * 公众平台秘钥
+     */
     private String mpAppSecret;
+
+    /**
+     * 开发平台id
+     */
+    private String openAppId;
+
+    /**
+     * 开发平台秘钥
+     */
+    private String openAppSecret;
 
     /**
      * 商户号
