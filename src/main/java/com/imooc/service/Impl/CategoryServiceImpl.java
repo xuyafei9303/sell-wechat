@@ -1,5 +1,6 @@
 package com.imooc.service.Impl;
 
+import com.imooc.controller.dao.ProductCategoryDao;
 import com.imooc.dataobject.ProductCategory;
 import com.imooc.repository.ProductCategoryRepository;
 import com.imooc.service.CategoryService;
@@ -16,6 +17,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
     protected ProductCategoryRepository repository;
+
 
     @Override
     public ProductCategory findOne(Integer categoryId) {

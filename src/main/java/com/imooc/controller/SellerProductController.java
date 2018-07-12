@@ -12,6 +12,8 @@ import com.imooc.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -122,6 +124,8 @@ public class SellerProductController {
      * @return
      */
     @PostMapping("/save")
+//    @CachePut(cacheNames = "porduct", key = "123")
+    @CacheEvict(cacheNames = "porduct", key = "123") // 在访问该方法之后，@CacheEvict会把缓存清除掉，然后下一次访问这个porduct缓存的时候回重新请求，再次访问save方法又会清除掉，目的是为了防止更新数据以后无法访问到新数据
     public ModelAndView save(@Valid ProductForm form,
                              BindingResult bindingResult,
                              Map<String, Object> map) {
